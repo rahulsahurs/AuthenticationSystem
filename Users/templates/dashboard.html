@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<form method="post">
+    {% if user.is_authenticated %}
+    <h3>Welcome, {{user.username}}</h3>
+    <a href="{% url 'logout' %}" class="btn btn-primary" role="button">Logout</a>
+    {% endif %}
+</form>
+{% endblock %}
